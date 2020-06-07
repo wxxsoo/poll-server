@@ -9,7 +9,8 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name="polls")
+@Entity
+@Table(name="polls")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Poll {
