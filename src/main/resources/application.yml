@@ -19,23 +19,3 @@ spring:
     console:
       enabled: true
       path: /h2-console
----
-spring:
-  profiles:
-    active: local-mariadb-dev
-  jpa:
-    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
-    show-sql: true
-    hibernate:
-      ddl-auto: create
-    properties:
-      hibernate:
-        format_sql: true
-        default_batch_fetch_size: 100
-  datasource:
-    url: jdbc:mariadb://localhost:3306/test
-    username: flex
-    password: flex
-    driver-class-name: org.mariadb.jdbc.Driver
-#logging.level:
-#  org.hibernate.SQL: debug
