@@ -12,7 +12,7 @@ import java.util.List;
 @Entity
 @Table(name="polls")
 @Getter
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Poll {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

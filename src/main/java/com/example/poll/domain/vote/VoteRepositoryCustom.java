@@ -8,4 +8,5 @@ public interface VoteRepositoryCustom {
     Long countByChoiceId(Long choiceId);
     Long countByPollId(Long pollId);
     void deleteByPollId(Long pollId);
+    List<Vote> findAllWithFetchJoin();
 }
