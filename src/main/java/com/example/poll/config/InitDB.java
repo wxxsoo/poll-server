@@ -50,9 +50,9 @@ public class InitDB {
         
         Poll poll2 = Poll.builder().question("가장 좋아하는 음식은?").pollMaker("lee").password("123").build();
         pollRepository.save(poll2);
-        Choice choice11 = choiceRepository.save(Choice.builder().title("샐러드").poll(poll).build());
-        Choice choice22 = choiceRepository.save(Choice.builder().title("치킨").poll(poll).build());
-        Choice choice33 = choiceRepository.save(Choice.builder().title("초밥").poll(poll).build());
+        Choice choice11 = choiceRepository.save(Choice.builder().title("샐러드").poll(poll2).build());
+        Choice choice22 = choiceRepository.save(Choice.builder().title("치킨").poll(poll2).build());
+        Choice choice33 = choiceRepository.save(Choice.builder().title("초밥").poll(poll2).build());
 
         for(int i=0; i<20; i++) {
             Vote vote = Vote.builder().poll(poll2).choice(choice11).reasonForVoting("다이어트 해야해요"+i).build();
@@ -66,6 +66,27 @@ public class InitDB {
 
         for(int i=0; i<5; i++) {
             Vote vote = Vote.builder().poll(poll2).choice(choice33).reasonForVoting("초밥 먹고싶어요"+i).build();
+            voteRepository.save(vote);
+        }
+
+        Poll poll3 = Poll.builder().question("가장 좋아하는 음악장르는?").pollMaker("kim").password("123").build();
+        pollRepository.save(poll3);
+        Choice choice111 = choiceRepository.save(Choice.builder().title("발라드").poll(poll3).build());
+        Choice choice222 = choiceRepository.save(Choice.builder().title("힙합").poll(poll3).build());
+        Choice choice333 = choiceRepository.save(Choice.builder().title("댄스").poll(poll3).build());
+
+        for(int i=0; i<20; i++) {
+            Vote vote = Vote.builder().poll(poll3).choice(choice111).reasonForVoting("발라드 "+i).build();
+            voteRepository.save(vote);
+        }
+
+        for(int i=0; i<10; i++) {
+            Vote vote = Vote.builder().poll(poll3).choice(choice222).reasonForVoting("힙합 "+i).build();
+            voteRepository.save(vote);
+        }
+
+        for(int i=0; i<5; i++) {
+            Vote vote = Vote.builder().poll(poll3).choice(choice333).reasonForVoting("댄스 "+i).build();
             voteRepository.save(vote);
         }
     }
